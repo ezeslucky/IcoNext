@@ -43,7 +43,7 @@ async function HeaderGithub() {
             <CountUpNumber number={stars} />
           </div>
         ) : (
-          'check repo'
+          'Check Repo'
         )}
         <ArrowUpRight className="w-4 h-4 sm:ml-1 ml-0 text-muted-foreground" />
       </Link>

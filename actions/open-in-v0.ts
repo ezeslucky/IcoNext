@@ -13,12 +13,12 @@ export async function openInV0Action(name: string) {
     const payload = {
       ...template,
       meta: {
-        project: 'IcoNext',
+        project: 'pqoqubbw/icons',
         author: 'dmytro',
         url: 'https://icons.pqoqubbw.dev',
       },
       source: {
-        title: 'IcoNext',
+        title: 'pqoqubbw/icons',
         url: 'https://icons.pqoqubbw.dev',
         file: `${name}.tsx`,
       },

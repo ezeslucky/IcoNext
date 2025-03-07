@@ -12,7 +12,8 @@ const getIconForV0 = async (name: string) => {
             )
           )
         : await (
-            await fetch(`https://icons.pqoqubbw.dev/c/${name}.json`)
+            await fetch(`
+/c/${name}.json`)
           ).json();
 
     const componentName = name

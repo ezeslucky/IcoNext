@@ -59,7 +59,7 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
 
     op.track(ANALYTIC_EVENT.ICON_COPY_TERMINAL, { icon: `${name}.tsx` });
     navigator.clipboard.writeText(
-      `npx shadcn@latest add "https://icons.pqoqubbw.dev/c/${name}.json"`
+      `npx shadcn@latest add "${name}.json"`
     );
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
