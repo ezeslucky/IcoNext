@@ -1,101 +1,61 @@
-import Image from "next/image";
+import React, { Suspense } from 'react';
+import Link from 'next/link';
+import { LINK } from '@/constants';
+import { getIcons } from '@/actions/get-icons';
+import { IconsList } from '@/components/list';
+import { CliBlock } from '@/components/cli-block';
+import { ArrowUpRight } from 'lucide-react';
 
-export default function Home() {
+export default async function Home() {
+  const icons = await getIcons();
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+    <div className="font-mono flex items-center justify-center sm:mt-16 mt-8">
+      <div className="container">
+        <Link
+          href="/sponsorship"
+          className="mt-3 sm:hidden flex mb-2 leading-normal items-center w-fit gap-1 border border-input rounded-2xl bg-input/50 pr-2 pl-3 py-1 text-muted-foreground text-sm"
+        >
+          sponsorship here{' '}
+          <ArrowUpRight className="size-3 leading-0 mt-[1px] shrink-0" />
+        </Link>
+        <h1 className="sm:text-3xl text-2xl text-balance">
+          beautifully crafted animated icons
+        </h1>
+        <p className="sm:text-sm text-xs leading-relaxed sm:mt-4 mt-2 text-muted-foreground max-w-lg text-pretty">
+          an open-source (
+          <Link
+            className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground"
             target="_blank"
-            rel="noopener noreferrer"
+            href={`${LINK.GITHUB}/blob/main/LICENSE`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            MIT License
+          </Link>
+          ) collection of smooth animated icons for your projects. feel free to
+          use them, share your feedback, and let&apos;s make this library
+          awesome together.
+        </p>
+        <p className="text-muted-foreground sm:text-sm text-xs mt-4">
+          built with{' '}
+          <Link
+            href={LINK.MOTION}
+            className="inline-flex transition-colors duration-200 hover:border-foreground/30 items-center gap-1 rounded border bg-muted px-2 py-[2px] font-mono text-xs font-medium text-muted-foreground opacity-100"
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            <kbd>motion</kbd>
+          </Link>{' '}
+          and{' '}
+          <Link
+            href={LINK.LUCIDE}
+            className="inline-flex transition-colors duration-200 hover:border-foreground/30 items-center gap-1 rounded border bg-muted px-2 py-[2px] font-mono text-xs font-medium text-muted-foreground opacity-100"
+          >
+            <kbd>lucide</kbd>
+          </Link>
+        </p>
+        <CliBlock icons={icons} />
+        <Suspense>
+          <IconsList icons={icons} />
+        </Suspense>
+      </div>
     </div>
   );
 }
