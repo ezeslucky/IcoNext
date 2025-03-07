@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+package-lock.json
+yarn.lock
+
 # testing
 /coverage
 
@@ -28,9 +31,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (can opt-in for commiting if needed)
 .env*
 
 # vercel

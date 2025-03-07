@@ -14,12 +14,12 @@ export async function openInV0Action(name: string) {
       ...template,
       meta: {
         project: 'IcoNext',
-        author: 'ezeslucky',
-        url: 'https://icons.ezeslucky.dev',
+        author: 'dmytro',
+        url: 'https://icons.pqoqubbw.dev',
       },
       source: {
         title: 'IcoNext',
-        url: 'https://icons.ezeslucky.dev',
+        url: 'https://icons.pqoqubbw.dev',
         file: `${name}.tsx`,
       },
     };

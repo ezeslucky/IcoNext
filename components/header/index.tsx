@@ -10,7 +10,6 @@ const Header = () => {
       <div className="container w-full flex items-center justify-between h-full">
         <Link href="/" className="flex items-center gap-2">
           <h1 className="text-base">IcoNext
-
 </h1>
         </Link>
         <Link

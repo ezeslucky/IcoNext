@@ -1,0 +1,6 @@
+build/
+node_modules/
+.github/
+.vscode/
+tailwind.config.ts
+README.md

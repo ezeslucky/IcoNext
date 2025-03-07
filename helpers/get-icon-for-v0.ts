@@ -12,7 +12,7 @@ const getIconForV0 = async (name: string) => {
             )
           )
         : await (
-            await fetch(`https://icons.ezeslucky.dev/c/${name}.json`)
+            await fetch(`https://icons.pqoqubbw.dev/c/${name}.json`)
           ).json();
 
     const componentName = name
@@ -28,7 +28,7 @@ const getIconForV0 = async (name: string) => {
       title: name,
       source: {
         title: 'IcoNext',
-        url: 'https://icons.ezeslucky.dev',
+        url: 'https://icons.pqoqubbw.dev',
         file: `${name}.tsx`,
       },
       registryDependencies: iconData.registryDependencies || [],
@@ -58,9 +58,7 @@ const getIconForV0 = async (name: string) => {
             '})\n\n' +
             'export const metadata: Metadata = {\n' +
             `  title: '${name} Icon',\n` +
-            `  description: 'Animated ${name} icon component from IcoNext
-
-',\n` +
+            `  description: 'Animated ${name} icon component from IcoNext',\n` +
             '}\n\n' +
             'export default function RootLayout({\n' +
             '  children,\n' +
